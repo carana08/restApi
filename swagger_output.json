@@ -5,7 +5,7 @@
     "description": "REST API with Express and Firestore",
     "version": "1.0.0"
   },
-  "host": "restapi-o8ud.onrender.com",
+  "host": "localhost:5500",
   "basePath": "/api",
   "schemes": [
     "https"
@@ -19,6 +19,13 @@
         "summary": "Create an item",
         "description": "Create an item",
         "parameters": [
+          {
+            "name": "Token",
+            "in": "header",
+            "description": "JWT token",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "data",
             "in": "body",
@@ -36,6 +43,9 @@
           },
           "400": {
             "description": "Bad request"
+          },
+          "408": {
+            "description": "Request Timeout"
           }
         }
       },
@@ -45,12 +55,24 @@
         ],
         "summary": "Get all items entries",
         "description": "Get all items entries",
+        "parameters": [
+          {
+            "name": "Token",
+            "in": "header",
+            "description": "JWT token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Items entries successfully obtained"
           },
           "400": {
             "description": "Bad request"
+          },
+          "408": {
+            "description": "Request Timeout"
           }
         }
       }
@@ -69,6 +91,13 @@
             "required": true,
             "type": "string",
             "description": "Item id"
+          },
+          {
+            "name": "Token",
+            "in": "header",
+            "description": "JWT token",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -80,6 +109,9 @@
           },
           "404": {
             "description": "Item not found"
+          },
+          "408": {
+            "description": "Request Timeout"
           }
         }
       },
@@ -98,6 +130,13 @@
             "description": ""
           },
           {
+            "name": "Token",
+            "in": "header",
+            "description": "JWT token",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "data",
             "in": "body",
             "description": "",
@@ -114,6 +153,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "408": {
+            "description": "Request Timeout"
           }
         }
       },
@@ -130,6 +172,13 @@
             "required": true,
             "type": "string",
             "description": ""
+          },
+          {
+            "name": "Token",
+            "in": "header",
+            "description": "JWT token",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -138,6 +187,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "408": {
+            "description": "Request Timeout"
           }
         }
       }

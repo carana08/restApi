@@ -1,9 +1,7 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const verifyJWT = (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-            /* 
+  /* 
   #swagger.tags = ['Token']
   #swagger.description = 'Validate token'
   #swagger.summary = 'Validate token'
@@ -12,22 +10,27 @@ const verifyJWT = (req, res, next) => {
       description: 'JWT token',
       required: true,
     }
+    #swagger.responses[200] = {
+        description: '',
+    }
+    #swagger.responses[408] = {
+        description: 'Token not provided',
+    }
 */
 
+  const authHeader = req.headers['token'];
+  if (!authHeader) {
+    return res.status(408).send('Token not provided');
+  }
 
-    if (!token) {
-        return res.status(408).json({ message: 'Token not provided' });
+  const token = authHeader;
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(408).send('Request Timeoutoken');
     }
-
-    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-
-        if (err) {
-            return res.status(408).json({ message: 'Invalid token' });
-        }
-
-        req.user = decoded;
-        next();
-    });
+    req.user = decoded;
+    next();
+  });
 };
-
 module.exports = verifyJWT;

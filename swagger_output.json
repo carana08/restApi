@@ -5,10 +5,16 @@
     "description": "REST API with Express and Firestore",
     "version": "1.0.0"
   },
-  "host": "localhost:5500",
+  "host": "restapi-o8ud.onrender.com",
   "basePath": "/api",
   "schemes": [
     "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
   ],
   "paths": {
     "/items": {
@@ -38,6 +44,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "201": {
             "description": "Item successfully created"
           },
@@ -45,7 +54,7 @@
             "description": "Bad request"
           },
           "408": {
-            "description": "Request Timeout"
+            "description": "Token not provided"
           }
         }
       },
@@ -72,7 +81,7 @@
             "description": "Bad request"
           },
           "408": {
-            "description": "Request Timeout"
+            "description": "Token not provided"
           }
         }
       }
@@ -111,7 +120,7 @@
             "description": "Item not found"
           },
           "408": {
-            "description": "Request Timeout"
+            "description": "Token not provided"
           }
         }
       },
@@ -155,7 +164,7 @@
             "description": "Bad Request"
           },
           "408": {
-            "description": "Request Timeout"
+            "description": "Token not provided"
           }
         }
       },
@@ -189,7 +198,7 @@
             "description": "Bad Request"
           },
           "408": {
-            "description": "Request Timeout"
+            "description": "Token not provided"
           }
         }
       }

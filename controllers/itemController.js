@@ -124,7 +124,6 @@ exports.deleteItem = async (req, res) => {
              description: '',
              required: true,
          }
-
          #swagger.responses[200] = {
              description: '',
          }

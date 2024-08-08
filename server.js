@@ -6,7 +6,6 @@ const serviceAccount = JSON.parse(process.env.FIREBASE_ADMIN_API);
 const admin = require('firebase-admin');
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger_output.json');
-const verifyJWT = require('./middleware/verifyJWT'); // Importa el middleware
 const path = require('path');
 
 

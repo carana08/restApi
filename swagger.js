@@ -9,8 +9,6 @@ const swaggerAutogen = require('swagger-autogen')()
    "host": "restapi-o8ud.onrender.com",
    "basePath": "/api",
    "schemes": ['https'],
-  "consumes": ['application/json'],
-  "produces": ['application/json']
  };
 
  const outputFile = './swagger_output.json'

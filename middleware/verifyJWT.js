@@ -15,7 +15,7 @@ const verifyJWT = (req, res, next) => {
         description: 'Token is valid',
     }
     #swagger.responses[408] = {
-        description: 'Token not provided or invalid',
+        description: 'Request Timeout.',
     }
   */
 
@@ -34,7 +34,7 @@ const verifyJWT = (req, res, next) => {
     next();
   } catch (error) {
     console.error('Token verification error:', error);
-    res.status(408).send('Request Timeout. Invalid token.');
+    res.status(408).send('Request Timeout.');
   }
 };
 

@@ -48,7 +48,7 @@
             "description": "Bad request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout."
           }
         }
       },
@@ -75,7 +75,7 @@
             "description": "Bad request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout."
           }
         }
       }
@@ -114,7 +114,7 @@
             "description": "Item not found"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout."
           }
         }
       },
@@ -158,7 +158,7 @@
             "description": "Bad Request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout."
           }
         }
       },
@@ -192,7 +192,7 @@
             "description": "Bad Request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout."
           }
         }
       }

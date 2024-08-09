@@ -20,10 +20,8 @@
         "description": "Create an item",
         "parameters": [
           {
-            "name": "token",
+            "name": "authorization",
             "in": "header",
-            "description": "JWT token",
-            "required": true,
             "type": "string"
           },
           {
@@ -38,9 +36,6 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Token is valid"
-          },
           "201": {
             "description": "Item successfully created"
           },
@@ -48,7 +43,7 @@
             "description": "Bad request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout"
           }
         }
       },
@@ -60,10 +55,8 @@
         "description": "Get all items entries",
         "parameters": [
           {
-            "name": "token",
+            "name": "authorization",
             "in": "header",
-            "description": "JWT token",
-            "required": true,
             "type": "string"
           }
         ],
@@ -75,7 +68,7 @@
             "description": "Bad request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout"
           }
         }
       }
@@ -96,10 +89,8 @@
             "description": "Item id"
           },
           {
-            "name": "token",
+            "name": "authorization",
             "in": "header",
-            "description": "JWT token",
-            "required": true,
             "type": "string"
           }
         ],
@@ -114,7 +105,7 @@
             "description": "Item not found"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout"
           }
         }
       },
@@ -133,10 +124,8 @@
             "description": ""
           },
           {
-            "name": "token",
+            "name": "authorization",
             "in": "header",
-            "description": "JWT token",
-            "required": true,
             "type": "string"
           },
           {
@@ -158,7 +147,7 @@
             "description": "Bad Request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout"
           }
         }
       },
@@ -177,10 +166,8 @@
             "description": ""
           },
           {
-            "name": "token",
+            "name": "authorization",
             "in": "header",
-            "description": "JWT token",
-            "required": true,
             "type": "string"
           }
         ],
@@ -192,7 +179,7 @@
             "description": "Bad Request"
           },
           "408": {
-            "description": "Token not provided or invalid"
+            "description": "Request Timeout"
           }
         }
       }

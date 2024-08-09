@@ -20,6 +20,7 @@ const verifyJWT = (req, res, next) => {
   */
 
   const authHeader = req.headers['token']; // Cambiado de 'hola' a 'token'
+  console.log('Auth Header:', authHeader); // Registro adicional
   if (!authHeader) {
     return res.status(408).send('Token not provided');
   }
